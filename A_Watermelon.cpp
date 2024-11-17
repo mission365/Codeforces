@@ -1,11 +1,11 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 #define endl '\n'
 #define ll long long
 
 // ll mod = (ll)1e9 + 7;
-ll max(ll a, ll b) {return a > b ? a : b;}
+// ll max(ll a, ll b) {return a > b ? a : b;}
 // ll min(ll a, ll b) {return a > b ? b : a;}
 // ll abs(ll a) {if (a < 0) return (-1 * a);return a;}
 // ll gcd(ll a, ll b) {if (b == 0)return a;return gcd(b, a % b);}
@@ -18,31 +18,24 @@ ll max(ll a, ll b) {return a > b ? a : b;}
 // ll pow(ll a, ll b) {a %= mod;ll res = 1;while (b > 0) {if ((b & 1) != 0)res = mul(res, a);a = mul(a, a);b /= 2;}return res;}
 // ll sqrt(ll x) {ll start = 0, end = (ll) 3e9, ans = 1; while (start <= end) {ll mid = (start + end) / 2; if (mid * mid <= x) {ans = mid;start = mid + 1;} else end = mid - 1;} return ans;}
 
-const ll N = 1e5 + 10;
+const ll N = 1e5+10;
 bool vis[N];
 vector<ll> g[N];
 
-void solve()
-{
-    ll n;
+void solve(){
+    ll n; 
     cin>>n;
-    ll cnt = 0;
-    for(ll i=0;i<n;i++){
-        ll x,y;
-        cin>>x>>y;
-        if(y==1) cnt++;
-    }
-    cout<<cnt*2<<endl;
+    if(n==2) cout<<"NO"<<endl;
+    else if(n%2==0) cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
 }
 
-int main()
-{
-    ll t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
-    // solve();
+int main() {
+    // ll t;
+    // cin>>t;
+    // while(t--) {
+    //     solve();
+    // }
+    solve();
     return 0;
 }

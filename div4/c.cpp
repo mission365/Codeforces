@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 #define endl '\n'
@@ -18,31 +18,32 @@ ll max(ll a, ll b) {return a > b ? a : b;}
 // ll pow(ll a, ll b) {a %= mod;ll res = 1;while (b > 0) {if ((b & 1) != 0)res = mul(res, a);a = mul(a, a);b /= 2;}return res;}
 // ll sqrt(ll x) {ll start = 0, end = (ll) 3e9, ans = 1; while (start <= end) {ll mid = (start + end) / 2; if (mid * mid <= x) {ans = mid;start = mid + 1;} else end = mid - 1;} return ans;}
 
-const ll N = 1e5 + 10;
-bool vis[N];
-vector<ll> g[N];
-
-void solve()
-{
-    ll n;
-    cin>>n;
+void solve(){
+    ll x,y,k;
+    cin>>x>>y>>k;
     ll cnt = 0;
-    for(ll i=0;i<n;i++){
-        ll x,y;
-        cin>>x>>y;
-        if(y==1) cnt++;
-    }
-    cout<<cnt*2<<endl;
+    ll sum = 0;
+    if(x%k==0) sum=x/k;
+    else sum = (x/k)+1;
+    if(y%k==0) cnt = y/k;
+    else cnt = (y/k)+1;
+    ll mnval = min(cnt,sum);
+    ll mxval = max(cnt,sum);
+    ll ans = mxval+mnval+(mxval-mnval);
+    if(sum>cnt) ans--;
+    cout<<ans<<endl;
 }
 
-int main()
-{
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     ll t;
-    cin >> t;
-    while (t--)
-    {
+    cin>>t;
+    while(t--) {
         solve();
     }
-    // solve();
+    //solve();
     return 0;
 }
